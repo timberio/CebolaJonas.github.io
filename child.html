@@ -15,7 +15,7 @@
         document.getElementById('inject').addEventListener('click', () => {
             try {
                 let iframe = document.createElement('iframe');
-                iframe.src = 'javascript:alert(1)'; // Injeção no iframe
+                iframe.src = 'javascript:window.top.alert(1);'; // Injeção no iframe
                 iframe.style.width = '100%';
                 iframe.style.height = '300px';
                 document.body.appendChild(iframe);
