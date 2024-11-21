@@ -13,15 +13,12 @@
 
     <script>
         document.getElementById('inject').addEventListener('click', () => {
-            try {
-                let iframe = document.createElement('iframe');
-                iframe.src = 'javascript:window.top.alert(1);'; // Injeção no iframe
-                iframe.style.width = '100%';
-                iframe.style.height = '300px';
-                document.body.appendChild(iframe);
-            } catch (e) {
-                console.error('Injection failed:', e);
-            }
+            let iframe = document.createElement('iframe');
+            // Usa srcdoc para esconder o domínio
+            iframe.srcdoc = `<script>alert(1)</script>`;
+            iframe.style.width = '100%';
+            iframe.style.height = '300px';
+            document.body.appendChild(iframe);
         });
     </script>
 </body>
