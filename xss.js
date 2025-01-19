@@ -8,7 +8,7 @@ xhr.onreadystatechange = function() {
     var cookies = xhr.getResponseHeader('Set-Cookie');
     
     // Exibe os cookies no console
-    console.log('Cookies recebidos: ', cookies);
+    alert('Cookies recebidos: ', cookies);
   }
 };
 xhr.send();  // Envia a requisição
