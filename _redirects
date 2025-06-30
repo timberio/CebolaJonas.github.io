@@ -1,2 +1,1 @@
-# Exemplo: Redirecionar todo tráfego para uma página de takeover
-/*   /index.html   200
+/js/*  https://quick-trade-web.netlify.app/js/:s  301!
